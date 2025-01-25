@@ -1,3 +1,5 @@
+[![Java CI with Gradle](https://github.com/ivan3035789/UiSelenium-SelenideJavaCore/actions/workflows/gradle.yml/badge.svg)](https://github.com/ivan3035789/UiSelenium-SelenideJavaCore/actions/workflows/gradle.yml)
+
 ## _Задание 1 - Selenid/Selenium_
 
 <span style="color: blue">Ссылка на ресурс</span>- [https://www.demoblaze.com/](https://www.demoblaze.com/)
