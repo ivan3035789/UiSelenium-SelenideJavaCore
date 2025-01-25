@@ -19,21 +19,3 @@ jobs:
       run: chmod +x gradlew
     - name: Tests
       run: ./gradlew clean test "-Dselenide.headless=true"
-    - name: Build test report
-      uses: simple-elf/allure-report-action@v1.7
-      if: always()
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v4
-      if: success() || failure() 
-      with:
-        name: allureReport
-        path: build/allure-results
-  report:
-    runs-on: ubuntu-latest
-    needs: tests 
-    if: ${{ always() }} 
-    steps:
-    - name: Download Test Reports Folder
-      uses: actions/download-artifact@v4
-      with:
-        name: allureReport 
