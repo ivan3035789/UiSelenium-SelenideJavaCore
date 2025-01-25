@@ -32,10 +32,12 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Tests
-      run: ./gradlew clean build --info "-Dselenide.headless=true"
+      run: ./gradlew clean test "-Dselenide.headless=true"
+    - name: buildAllure-reports
+      run: allure generate allure-results --clean -o allure-report  
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4
-      if: success() || failure()
+      if: success() || failure() 
       with:
         name: allureReport
         path: build/allure-results
